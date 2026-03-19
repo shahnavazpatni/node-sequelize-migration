@@ -1,0 +1,32 @@
+{
+  "name": "node_migration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migration:create" : "npx sequelize-cli migration:create",
+    "migrate" : "npx sequelize-cli db:migrate",
+    "migrate:undo" : "npx sequelize-cli db:migrate:undo",
+    "migrate:undo:all" : "npx sequelize-cli db:migrate:undo:all",
+    "seed:create" : "npx sequelize-cli seed:generate",
+    "seed" : "npx sequelize-cli db:seed:all",
+    "seed:undo" : "npx sequelize-cli db:seed:undo",
+    "seed:undo:all" : "npx sequelize-cli db:seed:undo:all",
+    "db:setup": "npm run migrate && npm run seed",
+    "db:fresh": "npm run migrate:undo:all && npm run migrate && npm run seed",
+    "model:generate" : "npx sequelize-cli model:generate --name YourModelName"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "mysql2": "^3.9.1",
+    "sequelize": "^6.36.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.2"
+  }
+}
